@@ -1,5 +1,6 @@
 package com.example.backend.service;
 
+import com.example.backend.exceptions.ToDoNotFoundException;
 import com.example.backend.model.Todo;
 import com.example.backend.repo.TodoRepo;
 import org.junit.jupiter.api.Test;
@@ -27,7 +28,7 @@ class TodoServiceTest {
 
         String giveId = "0";
 
-        assertThrows(NoSuchElementException.class, () -> todoService.getTodoById(giveId));
+        assertThrows(ToDoNotFoundException.class, () -> todoService.getTodoById(giveId));
     }
 
     @Test

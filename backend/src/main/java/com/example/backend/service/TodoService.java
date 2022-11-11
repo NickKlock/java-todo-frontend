@@ -26,8 +26,7 @@ public class TodoService {
     public Todo saveTodo(Todo todo) {
         String randomId = String.valueOf(generateRandom());
         Todo withId = new Todo(randomId,todo.description(),todo.status());
-        todoRepo.addTodo(withId);
-        return withId;
+        return todoRepo.addTodo(withId);
     }
 
     public Todo updateTodo(String id, Todo todo) {
